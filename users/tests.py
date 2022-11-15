@@ -15,8 +15,7 @@ class UserRegistrationTest(APITestCase):
             "password": "password",
         }
         response = self.client.post(url, user_data)
-        self.assertEqual(response.data["username"], self.data["username"])
-        # 위와 같이 하는 것 같긴한데 정확한 답을 잘 모르겠습니다ㅠ
+        self.assertEqual(response.data['message'], "가입완료!")
 
 class LoginUserTest(APITestCase):
     def setUp(self):
